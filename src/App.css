@@ -3,3 +3,19 @@
   align-items: center;
   justify-content: center;
 }
+.web-cam {
+  height: 500px;
+  width: 500px;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.message.red {
+  color: red;
+}
