@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+import BarcodeScannerComponent from 'react-barcode-reader';
 import './App.css';
 
 function App() {
+  const [data, setData] = React.useState('Not Found');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="camera-main">
+        <BarcodeScannerComponent
+          width={500}
+          height={500}
+          onUpdate={(err, result) => {
+            result ? setData(result.text) : setData('Not Found');
+          }}
+        />
+      </div>
+      <p>{data}</p>
+    </>
   );
 }
 
