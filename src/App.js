@@ -22,7 +22,7 @@ function App() {
           onUpdate={handleUpdate}
         />
       </div>
-      {data === 'Camera is not detected.' && <p className={`message ${data === 'Camera is not detected.' ? 'red' : ''}`}>{data}</p>}
+      {data === 'Camera is not detected.' && <p className={`message red`}>{data}</p>}
     </>
   );
 }
