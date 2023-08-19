@@ -3,9 +3,12 @@ import BarcodeScannerComponent from 'react-qr-barcode-scanner';
 import './App.css';
 
 function App() {
-  const [data, setData] = React.useState('Camera is not detected.');
+  const [data, setData] = React.useState(null);
 
   const handleUpdate = (err, result) => {
+    if (err) {
+      console.log(err);
+    }
     if (result) {
       setData(result.text);
     } else {
