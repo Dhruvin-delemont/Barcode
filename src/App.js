@@ -11,6 +11,7 @@ function App() {
     }
     if (result) {
       setData(result.text);
+      console.log(result);
     } else {
       setData('Camera is not detected.');
     }
@@ -25,7 +26,7 @@ function App() {
           onUpdate={handleUpdate}
         />
       </div>
-      {data === 'Camera is not detected.' && <p className={`message red`}>{data}</p>}
+      {data === 'Camera is not detected.' ? <p className={`message red`}>{data}</p> : null}
     </>
   );
 }
