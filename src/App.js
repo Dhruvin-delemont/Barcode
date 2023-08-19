@@ -1,32 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import BarcodeScannerComponent from 'react-qr-barcode-scanner';
 import './App.css';
 
 function App() {
-  const [data, setData] = React.useState(null);
+  const [data, setData] = React.useState('Not Found');
 
-  const handleUpdate = (err, result) => {
-    if (err) {
-      console.log(err);
-    }
-    if (result) {
-      setData(result.text);
-      console.log(result);
-    } else {
-      setData('Camera is not detected.');
-    }
-  };
   return (
     <>
       <div className="camera-main">
         <BarcodeScannerComponent
-          className="web-cam"
           width={500}
           height={500}
-          onUpdate={handleUpdate}
+          onUpdate={(err, result) => {
+            if (result) setData(result.text);
+            else setData('Not Found');
+          }}
         />
       </div>
-      {data === 'Camera is not detected.' ? <p className={`message red`}>{data}</p> : null}
+      <p className="message red">{data}</p>
     </>
   );
 }
