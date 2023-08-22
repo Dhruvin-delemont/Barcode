@@ -57,7 +57,7 @@ function App() {
       <p
         style={{ color: !data ? 'red' : 'green' }}
         className="message">
-        {!data ? 'Please Scan Barcode!' : `Barcode No.: ${data}`}
+        {!data ? 'Please Scan Barcode!' : `Barcode found: ${data}`}
       </p>
 
       {/* Pop ups model */}
