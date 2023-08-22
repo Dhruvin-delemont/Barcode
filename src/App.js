@@ -67,7 +67,10 @@ function App() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
         <Box sx={style}>
-          <Typography id="modal-modal-title">Press Allow to Open this site!</Typography>
+          <Typography id="modal-modal-title center">
+            You are about to be redirected to a new page.
+            <br /> Press Allow to continue.
+          </Typography>
           <br />
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             <Button onClick={handleClose}>Close</Button>
