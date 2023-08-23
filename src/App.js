@@ -1,10 +1,13 @@
 import React from 'react';
 import BarcodeScannerComponent from 'react-qr-barcode-scanner';
 import './App.css';
+import './responsive.css';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+
+let barcodeNo = null;
 
 const style = {
   position: 'absolute',
@@ -28,7 +31,7 @@ function App() {
 
   React.useEffect(() => {
     // check type of data
-    if (typeof data == 'number') {
+    if (typeof barcodeNo == 'number') {
       setTimeout(() => {
         handleOpen();
       });
@@ -36,29 +39,42 @@ function App() {
   }, [data]);
 
   const handleRedirect = () => {
-    window.open(link + data, '_blank');
+    window.open(link + barcodeNo, '_blank');
+    barcodeNo = null;
+    handleClose();
   };
 
   return (
     <>
-      <div className="camera-main">
-        <BarcodeScannerComponent
-          width={500}
-          height={500}
-          onUpdate={(err, result) => {
-            if (result) {
-              setData(Number(result.text));
-            } else {
-              setData(null);
-            }
-          }}
-        />
+      <div>
+        <h4
+          className="message"
+          style={{ color: !barcodeNo ? 'black' : 'green' }}>
+          {!barcodeNo ? 'Please Scan Barcode!' : `Barcode found: ${barcodeNo}`}
+        </h4>
       </div>
-      <p
-        style={{ color: !data ? 'red' : 'green' }}
-        className="message">
-        {!data ? 'Please Scan Barcode!' : `Barcode found: ${data}`}
-      </p>
+      <div className="camera-main">
+        <div className="camera">
+          <BarcodeScannerComponent
+            onUpdate={(err, result) => {
+              if (result) {
+                setData(Number(result.text));
+                barcodeNo = Number(result.text);
+              } else {
+                // barcodeNo = null;
+                setData(null);
+              }
+            }}
+          />
+        </div>
+      </div>
+      <div className="steps">
+        <h4> Follow The Steps :-</h4>
+        <ol>
+          <li>Scan the bar code through the camera area</li>
+          <li>Open the browser to reach the book details</li>
+        </ol>
+      </div>
 
       {/* Pop ups model */}
       <Modal

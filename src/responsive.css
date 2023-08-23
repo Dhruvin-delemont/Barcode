@@ -1,0 +1,93 @@
+@media only screen and (min-width: 1430px) {
+    .container {
+        max-width: 1290px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .container {
+        max-width: 1630px;
+    }
+}
+
+@media only screen and (max-width: 1799px) {
+    .about_content {
+        padding-left: 25px;
+    }
+
+    footer {
+        padding: 60px 0;
+    }
+
+    section.testimonial {
+        padding: 80px 0px;
+    }
+
+    section.health {
+        margin-bottom: 0;
+    }
+
+    .Health_img img {
+        max-width: 590px;
+    }
+
+    .heroimg img {
+        max-width: 590px;
+    }
+
+    .heroinfo h1 {
+        font-size: 70px;
+        line-height: 77px;
+    }
+
+
+
+
+}
+
+@media only screen and (max-width: 1599px) {}
+
+@media only screen and (max-width: 1429px) {}
+
+@media only screen and (max-width: 1199px) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 991px) {}
+
+@media only screen and (max-width: 767px) {}
+
+@media only screen and (max-width: 575px) {
+
+    body {
+        padding: 0 25px;
+    }
+
+    .message {
+        font-size: 22px;
+        margin: 20px 0;
+    }
+
+    .camera-main .camera {
+        width: 350px !important;
+        height: 350px !important;
+    }
+
+    .steps h4 {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 479px) {}
+
+@media only screen and (max-width: 414px) {}
+
+@media only screen and (max-width: 375px) {}
+
+@media only screen and (max-width: 349px) {}

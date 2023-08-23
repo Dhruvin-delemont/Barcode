@@ -1,21 +1,35 @@
+body {
+  padding: 0 50px;
+}
 .camera-main {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.web-cam {
-  height: 500px;
+.camera-main .camera {
   width: 500px;
+  height: 500px;
 }
 
 .message {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 30px;
+    margin: 30px 0;
 }
 
-.message.red {
-  color: red;
+.steps h4 {
+  font-size: 30px;
+  margin: 30px 0 0 0;
+}
+
+.steps ol {
+  padding-left: 30px;
+  margin: 10px 0;
+}
+
+.steps ol li {
+  font-size: 16px;
+  padding: 0 0 8px 0;
 }
