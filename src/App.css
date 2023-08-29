@@ -1,12 +1,25 @@
 body {
   padding: 0 50px;
 }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .camera-main {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .camera-main .camera {
+  /* background-color: yellowgreen; */
   width: 500px;
   height: 500px;
 }
@@ -15,8 +28,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 30px 0;
   font-size: 30px;
-    margin: 30px 0;
+}
+
+.feild-label {
+  margin: 10px 0 !important;
+}
+
+.steps .barcode-text .barcode-label {
+  position: absolute;
+  top: 0;
+  bottom: 30px;
+  transform: translate(-10%, -100%);
+}
+
+.steps .barcode-text {
+  position: relative;
+  margin: 20px auto !important;
+  max-width: fit-content;
 }
 
 .steps h4 {
@@ -32,4 +62,10 @@ body {
 .steps ol li {
   font-size: 16px;
   padding: 0 0 8px 0;
+}
+p#outlined-primary-helper-text {
+  color: #d32f2f;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
 }
